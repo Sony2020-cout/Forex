@@ -1,0 +1,54 @@
+#include<iostream>
+#include"conio.h"
+#include "windows.h"
+#include <string>
+
+
+
+void main()
+{
+	setlocale(0, "ru");
+
+	std::string user1 = "Vasya";
+	std::string user2 = "Petya";
+	std::string user3 = "Vova";
+
+	short balanceU1UsdCurrent = 10;
+	short balanceU2UsdCurrent = 20;
+	short balanceU3UsdCurrent = 50;
+
+	
+
+	std::cout << "Предлагаю, для начала, ввести " << std::endl;
+	std::cout << "курс доллара для пользователей " << std::endl;
+	std::cout << "Для этого нажми клавишу y" << std::endl;
+	
+	if (_kbhit) {
+		switch (_getch()) {
+		case 'y':
+			short priceU1Rub;
+			std::cout << "Введи курс доллара для User 1" << std::endl;
+			std::cin >> priceU1Rub;
+			short priceU2Rub;
+			std::cout << "Введи курс доллара для User 2" << std::endl;
+			std::cin >> priceU2Rub;
+			short priceU3Rub;
+			std::cout << "Введи курс доллара для User 3" << std::endl;
+			std::cin >> priceU3Rub;
+
+			std::cout << "Баланс пользователей" << std::endl;
+
+			std::cout << "Баланс" << " " << user1 << " " << -(balanceU1UsdCurrent * priceU1Rub) << std::endl;
+
+			
+			std::cout << "Баланс" << " " << user2 << " " << -(balanceU2UsdCurrent * priceU2Rub) << std::endl;
+
+			
+			std::cout << "Баланс" << " " << user3 << " " << (balanceU3UsdCurrent * priceU1Rub) - 1220  << std::endl;
+			
+		default:
+			return;
+		}
+	}
+
+}
